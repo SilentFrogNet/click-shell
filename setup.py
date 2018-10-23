@@ -2,10 +2,8 @@
 from setuptools import setup, find_packages
 
 # Set version
-__version__ = '0.0.0'  # Explicit default
-with open('click_shell/version.py') as f:
-    exec(f.read())
-
+with open('VERSION', 'r') as f:
+    __version__ = f.read().strip()
 
 SHORT_DESCRIPTION = 'An extension to click that easily turns your click app into a shell utility'
 
@@ -29,11 +27,12 @@ testing_requirements = [
 setup(
     name='click-shell',
     version=__version__,
-    url='https://github.com/clarkperkins/click-shell',
-    author='Clark Perkins',
-    author_email='r.clark.perkins@gmail.com',
+    url='https://github.com/SilentFrogNet/click-shell',
+    author='Ilario Dal Grande',
+    author_email='info@silentfrog.net',
     description=SHORT_DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/markdown",
     license='BSD',
     include_package_data=True,
     packages=find_packages(),
@@ -50,6 +49,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
+        'Environment :: Console',
         'Topic :: Software Development :: User Interfaces',
         'Topic :: System :: Shells',
         'Topic :: Utilities',

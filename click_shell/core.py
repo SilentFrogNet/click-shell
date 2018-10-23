@@ -135,6 +135,10 @@ def make_click_shell(ctx, prompt=None, intro=None, hist_file=None):
     return shell
 
 
+def add_shell_only_command(shell, cmd, name=None):
+    shell.add_shell_only_command(cmd, name)
+
+
 class Shell(click.Group):
 
     def __init__(self, prompt=None, intro=None, hist_file=None, **attrs):
@@ -149,6 +153,13 @@ class Shell(click.Group):
     def add_command(self, cmd, name=None):
         super(Shell, self).add_command(cmd, name)
 
+        # Grab the proper name
+        name = name or cmd.name
+
+        # Add the command to the shell
+        self.shell.add_command(cmd, name)
+
+    def add_shell_only_command(self, cmd, name=None):
         # Grab the proper name
         name = name or cmd.name
 
