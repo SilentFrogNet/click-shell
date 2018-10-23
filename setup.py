@@ -8,7 +8,7 @@ with open('VERSION', 'r') as f:
 SHORT_DESCRIPTION = 'An extension to click that easily turns your click app into a shell utility'
 
 # Use the README.md as the long description
-with open('README.rst') as f:
+with open('README.md') as f:
     LONG_DESCRIPTION = f.read()
 
 requirements = [
