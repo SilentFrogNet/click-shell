@@ -1,9 +1,8 @@
 [![GitHub tag](https://img.shields.io/github/tag/SilentFrogNet/click-shell.svg?label=version)](https://github.com/SilentFrogNet/click-shell/releases)
-[![GitHub license](https://img.shields.io/github/license/SilentFrogNet/click-shell.svg)](https://github.com/SilentFrogNet/click-shell/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/SilentFrogNet/click-shell.svg?colorB=yellow)](https://github.com/SilentFrogNet/click-shell/issues)
 
 
-#click-shell
+# click-shell
 
 This is a enhanced version of click-shell. 
 In particular it adds the function `add_shell_only_command` that allow to add a command to the shell that is hidden in the command called with parameters.
@@ -12,20 +11,20 @@ click-shell is an extension to [click](http://click.pocoo.org/) that easily turn
 It is built on top of the built in python [cmd](https://docs.python.org/2/library/cmd.html) module, with modifications to make it work with click.
 
 
-##Installation
+## Installation
 
 From git
 
 `pip install git+git://github.com/SilentFrogNet/click-shell.git`
 
 
-##Features
+## Features
 
 * Adds a "shell" mode **with command completion** to any click app
 * Just a one line change for most click apps
 
 
-##Usage
+## Usage
 
 Simply replace `@click.group` with `@click_shell.shell` on the root level command:
 
@@ -54,7 +53,7 @@ my-app >
 ```
 
 
-###Note
+### Note
 
 It should be noted that this decorator **only** alters functionality if no arguments are
 passed on the command line.  If you try to run a command directly
